@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: " en-US" }}">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/assets/imgs/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    {% seo %}
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <a id="a-title" style="text-decoration: none;" href="{{ '/' | relative_url }}">
+            <h1>{{ site.title | default: site.github.repository_name }}</h1>
+        </a>
+        <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+    </div>
+</header>
+
+<div class="container">
+    <main id="main_content">
+        {{ content }}
+    </main>
+</div>
+
+<footer>
+    <div class="footer-wrap container">
+        <section id="downloads">
+            <h3 class="uline">@PhearZero Projects:</h3>
+            {% for repository in site.github.public_repositories %}
+            {% if repository.has_pages and repository.has_downloads and repository.name != site.github.project_title %}
+            <a href="{{ repository.homepage | default: repository.html_url }}" class="btn btn-package">
+                <span class="icon">{% octicon package stroke:white stroke-width:1 stroke-opacity:0.6 %}</span>
+                {{ repository.name }}
+            </a>
+            {% endif %}
+            {% endfor %}
+        </section>
+        <section id="news">
+            <h3 class="uline">News:</h3>
+            <ul>
+                {% for post in site.posts limit:5 %}
+                <li>
+                    <h4>{{ post.date | date_to_long_string }}: <a href="{{ post.url }}">{{ post.title }}</a></h4>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+</footer>
+{% if site.google_analytics %}
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', '{{ site.google_analytics }}', 'auto');
+  ga('send', 'pageview');
+</script>
+{% endif %}
+<script data-href="{{site.github.repository_url}}" data-target="_blank"
+        src="https://unpkg.com/github-corners/dist/embed.min.js"></script>
+</body>
+</html>

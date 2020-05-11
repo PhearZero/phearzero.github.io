@@ -1,0 +1,70 @@
+{
+  "name": "phearzero.github.io",
+  "version": "0.0.0-development",
+  "description": "The land of Zero",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "semantic-release": "semantic-release --no-ci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhearZero/phearzero.github.io.git"
+  },
+  "author": "Michael Feher",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PhearZero/phearzero.github.io/issues"
+  },
+  "homepage": "https://phearzero.com",
+  "devDependencies": {
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.0.5",
+    "@semantic-release/npm": "^7.0.5",
+    "all-contributors-cli": "^6.14.2",
+    "conventional-changelog": "^3.1.18",
+    "covgen": "^3.1.4",
+    "cz-gitmoji": "0.0.7",
+    "semantic-release": "^17.0.7",
+    "semantic-release-gitmoji": "^1.3.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-gitmoji"
+    }
+  },
+  "release": {
+    "generateNotes": [
+      "semantic-release-gitmoji"
+    ],
+    "analyzeCommits": [
+      "semantic-release-gitmoji"
+    ],
+    "plugins": [
+      "semantic-release-gitmoji",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md",
+            "package.json"
+          ],
+          "message": ":bookmark: (release) ${nextRelease.version}\n\n${nextRelease.notes}"
+        }
+      ],
+      "@semantic-release/github"
+    ]
+  }
+}

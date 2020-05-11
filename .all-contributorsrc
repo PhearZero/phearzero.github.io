@@ -1,0 +1,25 @@
+{
+  "projectName": "phearzero.github.io",
+  "projectOwner": "phearzero",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "contributors": [
+    {
+      "login": "PhearZero",
+      "name": "Michael J Feher",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/3400442?v=4",
+      "profile": "http://phearzero.com",
+      "contributions": [
+        "code",
+        "business",
+        "content",
+        "blog",
+        "platform"
+      ]
+    }
+  ],
+  "commitConvention": "gitmoji"
+}
