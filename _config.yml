@@ -1,6 +1,7 @@
 title: PhearZero.com
 email: github@phearzero.com
 theme: jekyll-theme-hacker
+google_analytics: UA-129663883-2
 collections:
   authors:
     output: true
