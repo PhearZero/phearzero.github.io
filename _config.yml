@@ -1,5 +1,11 @@
 title: PhearZero.com
 email: github@phearzero.com
+author:
+  twitter: PhearZero
+twitter:
+  username: PhearZero
+  card: summary
+logo: /assets/imgs/Skull-640.png
 theme: jekyll-theme-hacker
 google_analytics: UA-129663883-2
 collections:
