@@ -25,7 +25,7 @@
     "conventional-changelog": "^3.1.18",
     "covgen": "^3.1.4",
     "cz-gitmoji": "0.0.7",
-    "semantic-release": "^17.0.7",
+    "semantic-release": "^17.2.3",
     "semantic-release-gitmoji": "^1.3.3"
   },
   "config": {
