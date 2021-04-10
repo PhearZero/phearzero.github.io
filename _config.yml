@@ -1,35 +1,23 @@
 title: PhearZero.com
-email: github@phearzero.com
-author:
-  twitter: PhearZero
-twitter:
-  username: PhearZero
-  card: summary
+email: git@phearzero.com
 logo: /assets/imgs/Skull-640.png
 theme: jekyll-theme-hacker
-google_analytics: UA-129663883-2
-collections:
-  authors:
-    output: true
-defaults:
-  - scope:
-      path: ""
-      type: "authors"
-    values:
-      layout: "author"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-  - scope:
-      path: ""
-    values:
-      layout: "default"
 plugins:
   - jekyll-feed
   - jekyll-octicons
+  - jekyll-sitemap
+include:
+  - .wiki
+  - CHANGELOG.md
 exclude:
  - .idea/
- - nodejunkie.github.io.iml
+ - phearzero.github.io.iml
  - node_modules
+ - package.json
+ - package-lock.json
+ - LICENSE
+ - CNAME
+ - Gemfile
+ - Gemfile.lock
+ - phearzero.github.io.gemspec
+ - CHANGELOG

@@ -17,7 +17,20 @@
             <h1>{{ site.title | default: site.github.repository_name }}</h1>
         </a>
         <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+        <section id="Links">
+            <h3>📝 Links:</h3>
+            {% for doc in site.pages %}
+            {% if doc.url contains '.wiki' %}
+            <a href="{{doc.url}}" class="btn">{{doc.title}}</a>
+            {% else %}
+            {% if doc.name contains '.md' %}
+            <a href="{{doc.url}}" class="btn">{{doc.title}}</a>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </section>
     </div>
+
 </header>
 
 <div class="container">
